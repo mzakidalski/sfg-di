@@ -51,10 +51,22 @@ public class LifeCycleDemoBean implements InitializingBean, DisposableBean, Bean
     @PostConstruct
     public void postConstruct() {
         System.out.println("## The post-construct of the LifeCycleBean has been called");
+        System.out.flush();
     }
 
     @PreDestroy
     public void preDestroy() {
         System.out.println("## The pre-destroy of the LifeCycleBean has been called");
+        System.out.flush();
+    }
+
+    public void beforeInit() {
+        System.out.println("## before-init called");
+        System.out.flush();
+    }
+
+    public void afterInit() {
+        System.out.println("## after-init called");
+        System.out.flush();
     }
 }
